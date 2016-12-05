@@ -1,5 +1,5 @@
 #
-# dockerfile - ubuntu 16.04, oracle-java8, mysql-server, maven
+# dockerfile - ubuntu 16.04, oracle-java8, mysql-server, maven, awscli
 #
 
 # Use ubuntu:16.04 as base image
@@ -40,3 +40,9 @@ RUN \
     apt-get install -y maven && \
     rm -rf /var/lib/apt/lists/*
 
+#Install AWS CLI
+RUN \
+    apt-get update && \
+    apt-get install -y python-pip groff && \
+    pip install awscli && \
+    rm -rf /var/lib/apt/lists/*
